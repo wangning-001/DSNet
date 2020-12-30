@@ -18,19 +18,14 @@ This is the environment for our experiments. Later versions of these packages mi
 
 ## Pretrained Models
 
+<!--
 The link to the pretrained model. (Currently, Paris StreetView, CelebA datasets)
 
 https://drive.google.com/drive/folders/1EbRSL6SlJqeMliT9qU8V5g0idJqvirZr?usp=sharing
+-->
 
 We strongly encourage the users to retrain the models if they are used for academic purpose, to ensure fair comparisons (which has been always desired). Achieving a good performance using the current version of code should not be difficult.
 
-## Reproducibility
-
-We've checked the reproducibilities of the results in the paper. 
-| |Reproducible|
-|:----:|:----:|
-|Paris StreetView|True|
-|CelebA|True|
 
 ## Running the program
 
@@ -50,7 +45,8 @@ There are several arguments that can be used, which are
 --result_save_path +str #where to save the inpainting results during testing
 --model_path +str #the pretrained generator to use during training/testing
 --target_size +int #the size of images and masks
---mask_mode +int #which kind of mask to be used, 0 for external masks with random order, 1 for randomly generated masks, 2 for external masks with fixed order (It will be better to use mask_mode 2 to obtain the fixed masks for certain images during testing)
+--mask_mode +int #which kind of mask to be used, 0 for external masks with random order, 1 for randomly generated masks, 2 for external masks with fixed order 
+(It will be better to use mask_mode 2 to obtain the fixed masks for certain images during testing)
 --batch_size +int #the size of mini-batch for training
 --n_threads +int
 --gpu_id +int #which gpu to use
@@ -92,30 +88,9 @@ For CelebA Dataset, train the model for 350,000 iterations and finetune for 150,
 
 For Places2 Challenge Dataset, train the model for 2,000,000 iterations and finetune for 1,000,000 iterations. (3,000,000 in total)
 
-## The organization of this code
-
-This part is for people who want to build their own methods based on this code.
-
-The core of this code is the `model.py` file. In specific, it defines the organization of the model, training procedures, loss functions and the parameter updating procedure.
-
-Before we start training/testing, the model and its components are initialized by `initialize_model(self, path=None, train=True)` method which builds a randomly initialized model and tries to load the pretrained parameters. The pipeline of the initialized model is provided in `modules`(The DSNet in our case).
-
-After the model is initialized, the method `cuda(self, path=None, train=True)` is called, which moves the model to the gpu given there exists avaliable cuda devices.
-
-When training the network, `train(self, train_loader, save_path, finetune = False)`  is called. This method requires an external dataloader that provides images and masks and the path to save the model. Given the dataloader correctly produces training data, the forward and backward propagation procedures are alternatively performed by calling `forward(self, masked_image, mask, gt_image)` and `update_parameters(self)`. The `forward` method simply feeds the data to the generator network and saves the output results. The `update_parameters(self)` updates the generator and discriminator separately (in our case, the discriminator doesn't exist). When updating the generator and discriminator, we calculate the loss functions and update the parameters.
-
-After training, we can test the data. At this time, a dataloader that provides the test data are required and the path where you want to save the generated results should also be given.
-## Building your own method
-To modify the method or build your own method based on this code, you can do this by changing the `DSNet.py` and `model.py` files.
-Some examples are given below:
-
-To change the training targets for generator, you can modify the `get_g_loss` method in model.py.
-
-To change the architecture of the model, you might want to modify the `DSNet.py` file.
-
-To add a discriminator for the DSNet, you need to 1.define the discirminator and its optimizer in `initialize_model` and `cuda` methods and 2.define the new loss functions for the discriminator and generator and 3. define parameter updating procedure in `update_D` method.
 ## Improving the code
 This code will be improved constantly. More functions for visualization are still to be developed.
+
 ## Citation
 If you find the article or code useful for your project, please refer to
 ```
