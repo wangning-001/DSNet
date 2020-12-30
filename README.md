@@ -46,7 +46,7 @@ There are several arguments that can be used, which are
 --model_path +str #the pretrained generator to use during training/testing
 --target_size +int #the size of images and masks
 --mask_mode +int #which kind of mask to be used, 0 for external masks with random order, 1 for randomly generated masks, 2 for external masks with fixed order 
-(It will be better to use mask_mode 2 to obtain the fixed masks for certain images during testing)
+ (It will be better to use mask_mode 2 during testing for fairness)
 --batch_size +int #the size of mini-batch for training
 --n_threads +int
 --gpu_id +int #which gpu to use
