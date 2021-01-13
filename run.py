@@ -1,6 +1,6 @@
 import argparse
 import os
-from model import RFRNetModel
+from model import DSNetModel
 from dataset import Dataset
 from torch.utils.data import DataLoader
 
@@ -22,7 +22,7 @@ def run():
     args = parser.parse_args()
         
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_id
-    model = RFRNetModel()
+    model = DSNetModel()
     if args.test:
         model.initialize_model(args.model_path, False)
         model.cuda()
