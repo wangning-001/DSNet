@@ -9,7 +9,7 @@ import os
 import time
 
 
-class RFRNetModel():
+class DSNetModel():
     def __init__(self):
         self.G = None
         self.lossNet = None
