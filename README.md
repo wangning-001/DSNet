@@ -96,7 +96,16 @@ This code will be improved constantly. More functions for visualization are stil
 ## Citation
 If you find the article or code useful for your project, please refer to
 ```
-
+@article{wang2021dynamic,
+  title={Dynamic Selection Network for Image Inpainting},
+  author={Wang, Ning and Zhang, Yipeng and Zhang, Lefei},
+  journal={IEEE Transactions on Image Processing},
+  volume={30},
+  pages={1784--1798},
+  year={2021},
+  publisher={IEEE},
+  doi={10.1109/TIP.2020.3048629}
+}
 ```
 ## Paper
 See the Paper folder
