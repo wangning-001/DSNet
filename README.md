@@ -86,10 +86,12 @@ For Paris Street View Dataset, train the model for 400,000 iterations and finetu
 
 For CelebA Dataset, train the model for 350,000 iterations and finetune for 150,000 iterations. (500,000 in total)
 
-For Places2 Challenge Dataset, train the model for 2,000,000 iterations and finetune for 1,000,000 iterations. (3,000,000 in total)
+For Places2 Dataset, train the model for 2,000,000 iterations and finetune for 1,000,000 iterations. (3,000,000 in total)
 
+<!--
 ## Improving the code
 This code will be improved constantly. More functions for visualization are still to be developed.
+-->
 
 ## Citation
 If you find the article or code useful for your project, please refer to
