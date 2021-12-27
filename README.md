@@ -26,7 +26,6 @@ https://drive.google.com/drive/folders/1EbRSL6SlJqeMliT9qU8V5g0idJqvirZr?usp=sha
 
 We strongly encourage the users to retrain the models if they are used for academic purpose, to ensure fair comparisons (which has been always desired). Achieving a good performance using the current version of code should not be difficult.
 
-The pretrained model will be released later.
 
 ## Running the program
 
