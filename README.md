@@ -16,17 +16,6 @@ Pillow==8.0.1
 
 This is the environment for our experiments. Later versions of these packages might need a few modifications of the code.
 
-## Pretrained Models
-
-<!--
-The link to the pretrained model. (Currently, Paris StreetView, CelebA datasets)
-
-https://drive.google.com/drive/folders/1EbRSL6SlJqeMliT9qU8V5g0idJqvirZr?usp=sharing
--->
-
-We strongly encourage the users to retrain the models if they are used for academic purpose, to ensure fair comparisons (which has been always desired). Achieving a good performance using the current version of code should not be difficult.
-
-
 ## Running the program
 
 To perform training, fine-tune or testing, use 
@@ -92,6 +81,16 @@ For Places2 Dataset, train the model for 2,000,000 iterations and finetune for 1
 ## Improving the code
 This code will be improved constantly. More functions for visualization are still to be developed.
 -->
+<!--
+## Pretrained Models
+-->
+<!--
+The link to the pretrained model. (Currently, Paris StreetView, CelebA datasets)
+
+https://drive.google.com/drive/folders/1EbRSL6SlJqeMliT9qU8V5g0idJqvirZr?usp=sharing
+-->
+
+We strongly encourage the users to retrain the models if they are used for academic purpose, to ensure fair comparisons (which has been always desired). Achieving a good performance using the current version of code should not be difficult.
 
 ## Citation
 If you find the article or code useful for your project, please refer to
